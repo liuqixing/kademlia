@@ -13,6 +13,19 @@ _node.connect( '127.0.0.1', 1214, function( err )
 	{
 		console.log( 'node.connect :: successfully ' );
 
+		_node.set( 'tick', 'MaxCompute', function( err )
+		{
+			if ( err )
+			{
+				console.error( '#' + ( new Date() ).toLocaleString() + ' | node.set tick :: ', err );
+			}
+			else
+			{
+				console.log( '$' + ( new Date() ).toLocaleString() + ' | node.set tick as MaxCompute :: successfully' );
+			}
+
+		});
+
 		setInterval
 		(
 			() =>
